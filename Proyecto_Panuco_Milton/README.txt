@@ -1,148 +1,124 @@
-=================================================================
-  PROYECTO SEMANA 3, 4: GRAFOS Y VALIDACIÓN HAVEL-HAKIMI
-=================================================================
+================================================================================
+PROYECTO DE ESTRUCTURAS DE DATOS AVANZADAS - SEMANAS 1 A 6
+================================================================================
 
-AUTOR: Milton Castillo  
-MATRÍCULA: 2301743  
-CURSO: Estructuras de Datos Avanzadas  
-FECHA: 4 de noviembre de 2025
+ALUMNO: Milton Cruz Pánuco Castillo
+PROFESOR: Dr. Eligardo Cruz Sanchez
 
-=================================================================
-CONTENIDO DEL PROYECTO
-=================================================================
+================================================================================
+DESCRIPCION
+================================================================================
 
-codigo/
-  ├── Graph.cs              - Clase genérica de grafo
-  ├── GraphValidator.cs     - Implementación Havel-Hakimi
-  ├── Program.cs            - Programa principal con pruebas
-  └── analysis.py           - Análisis de grafos en Python
+Este es mi proyecto del curso de Estructuras de Datos Avanzadas donde aprendi
+sobre grafos y algoritmos. El proyecto principal es modelar una red de calles
+de una ciudad y encontrar las rutas mas cortas entre puntos.
 
-datos/
-  ├── edges_undirected.txt  - Grafo no dirigido (7 aristas)
-  ├── edges_directed.txt    - Grafo dirigido (19 aristas)
-  └── ciudad_extendida.txt  - Mapa urbano extendido (25 zonas)
+Empece aprendiendo recursividad basica (semanas 1-2), luego grafos (semana 3),
+validacion de grafos (semana 4), recorridos BFS/DFS (semana 5) y finalmente
+algoritmos de rutas mas cortas como Dijkstra y Floyd-Warshall (semana 6).
 
-tests/
-  ├── GraphValidatorTests.cs - Tests unitarios C#
-  └── test_havel_hakimi.py   - Tests casos oficiales Python
+================================================================================
+QUE APRENDI
+================================================================================
 
-visualizaciones/
-  └── havel_visualizer.html  - Visualizador interactivo
+SEMANAS 1-2: Recursividad y programacion dinamica
+SEMANA 3: Grafos basicos, como representarlos en codigo
+SEMANA 4: Teorema de Havel-Hakimi para validar grafos
+SEMANA 5: BFS (busqueda por niveles) y DFS (busqueda en profundidad)
+SEMANA 6: Dijkstra y Floyd-Warshall para encontrar rutas mas cortas
 
-reportes/
-  ├── Reporte_Semana3_Castillo.pdf
-  └── Reporte_Semana4_Castillo.pdf
+================================================================================
+ARCHIVOS PRINCIPALES
+================================================================================
 
-=================================================================
-INSTRUCCIONES DE EJECUCIÓN
-=================================================================
+proyecto-semana3-4/codigo/csharp/
+  - Graph.cs, GraphValidator.cs, Program.cs
 
---- C# ---
+proyecto-semana3-4/codigo/python/
+  - graph.py, graph_validator.py, analysis.py
 
-1. Abrir el proyecto en Visual Studio o con dotnet CLI  
-2. Compilar:
-   dotnet build  
-3. Ejecutar el programa principal:
-   dotnet run --project Program.cs  
-4. Los tests se ejecutan automáticamente al final del Program.cs
+proyecto-semana3-4/datos/
+  - edges_undirected.txt, edges_directed.txt, ciudad_extendida.txt
 
---- PYTHON ---
+proyecto-semana3-4/tests/
+  - test_havel_hakimi.py, GraphValidatorTests.cs
 
-1. Ir a la carpeta codigo/:  
-   cd codigo  
-2. Ejecutar el análisis:
-   python analysis.py  
-3. Para probar los casos de Havel-Hakimi:
-   cd ../tests  
-   python test_havel_hakimi.py
+proyecto-semana3-4/visualizaciones/
+  - havel_visualizer.html
 
---- VISUALIZADOR ---
+proyecto-semana6/codigo/python/
+  - weighted_graph.py, test_weighted_graph.py
 
-1. Abrir visualizaciones/havel_visualizer.html en el navegador  
-2. Ingresar una secuencia, por ejemplo: 4,3,3,2,2,2,1,1  
-3. Dar clic en "Validar" y luego en "Paso Siguiente"
+proyecto-semana6/datos/
+  - edges_weighted.csv
 
-=================================================================
-REQUISITOS DEL SISTEMA
-=================================================================
+================================================================================
+COMO USAR
+================================================================================
 
-C#:
-  - .NET Framework 4.7 o .NET Core 3.1 en adelante  
-  - Visual Studio 2019 o superior (opcional)
+EJECUTAR CODIGO C#:
+  cd proyecto-semana3-4/codigo/csharp
+  dotnet run
+  dotnet test
 
-Python:
-  - Versión 3.7 o superior  
-  - No necesita librerías externas
+EJECUTAR CODIGO PYTHON:
+  cd proyecto-semana3-4/codigo/python
+  python graph.py
+  
+  cd proyecto-semana6/codigo/python
+  python weighted_graph.py
+  pytest test_weighted_graph.py -v
 
-Navegador:
-  - Chrome, Firefox, Edge o Safari actualizados
+VER VISUALIZACIONES:
+  Abrir havel_visualizer.html en el navegador
 
-=================================================================
-DESCRIPCIÓN DE ARCHIVOS CLAVE
-=================================================================
+================================================================================
+QUE SE NECESITA INSTALAR
+================================================================================
 
-Graph.cs  
-  Implementa una clase genérica para crear grafos con lista de adyacencia.  
-  Soporta grafos dirigidos y no dirigidos.  
-  Permite agregar vértices y aristas, recorrer con BFS/DFS  
-  y exportar el grafo a un archivo .txt.
+Para C#: .NET SDK desde https://dotnet.microsoft.com
+Para Python: Python 3.8+ desde https://python.org
+Para tests de Python: pip install pytest
 
-GraphValidator.cs  
-  Contiene la parte del algoritmo de Havel-Hakimi para validar secuencias gráficas.  
-  Incluye métodos para verificar si la suma de grados es par  
-  y para extraer la secuencia desde un grafo cargado.
+================================================================================
+ALGORITMOS IMPLEMENTADOS
+================================================================================
 
-analysis.py  
-  Script sencillo en Python que:
-  - Carga grafos desde archivos .txt  
-  - Calcula grados de entrada/salida  
-  - Muestra el vértice más conectado  
-  - Busca caminos con BFS
+- BFS: Busqueda en amplitud, O(V+E)
+- DFS: Busqueda en profundidad, O(V+E)
+- Dijkstra: Ruta mas corta desde un origen, O((V+E) log V)
+- Floyd-Warshall: Rutas mas cortas entre todos los pares, O(V^3)
+- Havel-Hakimi: Validacion de secuencias de grados, O(V^2)
 
-=================================================================
-CASOS DE PRUEBA IMPLEMENTADOS
-=================================================================
+================================================================================
+USO DE IA
+================================================================================
 
-Se usaron los 10 casos del documento original.
+Use inteligencia artificial como herramienta de apoyo en algunas partes del
+codigo, especificamente en la implementacion de Floyd-Warshall. Todo uso de
+IA esta documentado en el codigo con comentarios que dicen:
+"En esta parte tome ayuda de la IA para..."
 
-VÁLIDOS:
-  1. [4,3,3,2,2,2,1,1]
-  2. [3,2,2,1]
-  3. [4,3,3,2,2,2]
-  4. [0,0,0,0]
-  5. [3,3,3,3]
+================================================================================
+PROYECTO FINAL
+================================================================================
 
-INVÁLIDOS:
-  6. [3,3,3,1]
-  7. [5,5,4,3,2,1]
-  8. [3,2,1]
-  9. [6,1,1,1,1,1,1]
-  10. [5,3,2,2,1]
+El proyecto integrador consiste en modelar una red urbana donde:
+- Nodos = Intersecciones o estaciones
+- Aristas = Calles o conexiones
+- Pesos = Distancias en km o tiempos en minutos
 
-=================================================================
-RESULTADOS ESPERADOS
-=================================================================
+Con esto puedo:
+1. Verificar si la red esta bien conectada
+2. Encontrar la ruta mas corta entre dos puntos
+3. Calcular distancias entre todos los puntos
+4. Analizar el impacto de cerrar una calle
 
-Al ejecutar Program.cs:
-  ✓ Carga el grafo de la semana 3  
-  ✓ Extrae la secuencia de grados  
-  ✓ Valida con Havel-Hakimi  
-  ✓ Revisa que la suma sea par  
-  ✓ Corre los 10 casos de prueba  
-  ✓ Resultado final esperado: 10/10 PASS
+================================================================================
+RESULTADOS
+================================================================================
 
-Al ejecutar analysis.py:
-  ✓ Analiza los grafos de ejemplo  
-  ✓ Muestra grados y vértices conectados  
-  ✓ Indica el vértice con más conexiones  
-  ✓ Busca caminos entre vértices  
-
-=================================================================
-NOTAS ADICIONALES
-=================================================================
-
-- Los archivos .txt usan el formato: origen destino peso  
-- En los grafos no dirigidos no se duplican las aristas  
-- ciudad_extendida.txt contiene 25 zonas con nombres reales  
-- La secuencia de grados debe ser gráfica según Havel-Hakimi  
-- Si algún test falla, revisar el método IsGraphicalSequence()
+- Mas de 1000 lineas de codigo en C# y Python
+- Tests unitarios funcionando
+- Algoritmos implementados correctamente
+- Proyecto completo de red urbana funcional
